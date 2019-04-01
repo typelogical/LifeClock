@@ -1,0 +1,110 @@
+
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Life Clock</title>
+    <style type="text/css">
+      body {
+        width: 500px;
+        height: 200px;
+        margin: 10px;
+        padding: 10px;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+
+      #container {
+      	 
+      	  padding: 20px;
+      } /*
+      #container input {
+      display:block;
+      padding-right: 20px;
+      width:30px;
+      }
+  */
+      #container p {
+        font-weight: bold;
+      }
+     
+      #bDayTextInput {
+        width: 200px;
+      }
+
+      #time-container div h3 {
+        background-color: #888
+      }
+    
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src=".\jq\jquery-3.3.1.js"></script>
+    <script src=".\jq\jquery-ui.min.js"></script>
+    <script src="lifeClock.js"></script>
+    <script src="testLifeClock.js"></script>
+    <script src="ui.js"></script>
+    <link rel="stylesheet" href=".\jq\jquery-ui.min.css">
+    <link rel="stylesheet" href=".\jq\jquery-ui.structure.min.css">
+    <link rel="stylesheet" href=".\jq\jquery-ui.theme.min.css">
+  </head>
+
+  <body>
+      <div id="container">
+        <div id="header">
+          <h1>Life Clock</h1><br/>
+        		<button id="add-date-button" class="ui-button">Add Date</button>
+            <button id="settings-button" class="ui-button">Settings</button>
+        		<hr/>
+        </div>
+          <div id="time-view">
+            <p>Time Left...</p>
+            <div id="time-container">
+              <span></span>
+           </div>
+        </div>
+        <div id="add-date-view">
+          <label>Name: </label><input type="text" id="nameTextInput" /><br/>
+          <label>Date: </label><input type="text" id="addDateTextInput"/>
+          <button id="add-date-button" class="ui-button">Add</button>
+          <button id="back-button">Back</button>
+          <div id="date-added-msg"><p>Date added.</p> </div>
+        </div>
+        <div id="setup-view">
+          <!--
+          <label>Set Birth date:</label> 
+          Month <select>
+            <option>1</option>
+          </select>
+          Day
+         <select>
+            <option>12</option>
+          </select>
+          Year
+          <select>
+            <option>2020</option>
+          </select>
+          -->
+          <label>Set Birthday: </label><input type="text" id="bDayTextInput"/>
+          <button id="setBirthDateButton" class="ui-button">Set</button>
+        </div>
+      </div>
+
+
+  </body>
+</html>
+
+
+
